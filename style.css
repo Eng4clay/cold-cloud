@@ -1,60 +1,48 @@
-body {
-  margin:0; font-family:'Tajawal', sans-serif; background:#f8fbff; color:#0c356a;
-}
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Body */
+body { font-family:'Tajawal', sans-serif; background:#f8fbff; color:#0c356a; line-height:1.6; }
+
+/* Header */
 header {
   display:flex; justify-content:space-between; align-items:center;
   padding:15px 40px; background:linear-gradient(135deg,#0c356a,#1d5dad); color:#fff;
+  position:sticky; top:0; z-index:1000;
 }
 header .logo { display:flex; align-items:center; gap:10px; font-weight:700; }
-header img { width:45px; height:45px; }
-nav a { margin:0 12px; color:#fff; text-decoration:none; font-weight:500; }
+header img { width:50px; height:50px; }
+nav a { margin:0 12px; color:#fff; text-decoration:none; font-weight:500; transition:.3s; }
 nav a.active, nav a:hover { color:#ffd700; }
 
+/* Hero */
 .hero {
   height:80vh; background:url('https://images.unsplash.com/photo-1581090700227-4c4f50d2b5de?auto=format&fit=crop&w=1500&q=80') no-repeat center/cover;
   display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative;
 }
 .hero::after { content:""; position:absolute; inset:0; background:rgba(12,53,106,.6); }
 .hero-content { position:relative; z-index:1; }
-.hero h1 { font-size:40px; margin-bottom:15px; }
-.hero p { font-size:18px; margin-bottom:25px; }
-.btn { background:#ffd700; padding:12px 20px; border-radius:6px; text-decoration:none; font-weight:700; color:#0c356a; }
-.btn:hover { background:#ffce00; }
+.hero h1 { font-size:42px; margin-bottom:15px; }
+.hero p { font-size:20px; margin-bottom:25px; }
+.btn { background:#ffd700; padding:12px 25px; border-radius:6px; text-decoration:none; font-weight:700; color:#0c356a; transition:.3s; }
+.btn:hover { background:#ffce00; transform:scale(1.05); }
 
+/* Highlights & Services */
 .highlights, .services-list { padding:60px 40px; text-align:center; }
-.highlight-cards, .services-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; }
+.highlight-cards, .services-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; margin-top:30px; }
 .card, .service-card {
   background:#fff; padding:25px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,.1); transition:.3s;
 }
 .card:hover, .service-card:hover { transform:translateY(-5px); }
-.card i, .service-card i { font-size:36px; color:#1d5dad; margin-bottom:10px; }
+.card i, .service-card i { font-size:36px; color:#1d5dad; margin-bottom:15px; }
 
-.page-header { padding:50px 20px; text-align:center; background:#eaf6ff; }
-footer { background:#0c356a; color:#fff; text-align:center; padding:15px; }
-/* About Page */
-.about-page {
-  padding:60px 40px; display:flex; flex-wrap:wrap; gap:30px; align-items:center;
-}
-.about-page img { flex:1; max-width:400px; border-radius:12px; }
-.about-text { flex:1; min-width:280px; }
-.about-text h2 { font-size:24px; margin:15px 0; }
-.team { padding:60px 40px; text-align:center; }
-.team-members { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
-.member { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); width:220px; }
-.member img { width:100%; border-radius:50%; margin-bottom:10px; }
+/* Footer */
+footer { background:#0c356a; color:#fff; text-align:center; padding:20px; font-size:14px; }
 
-/* Contact Page */
-.contact-page { padding:60px 40px; display:flex; flex-wrap:wrap; gap:40px; }
-.contact-form, .contact-details { flex:1; min-width:300px; background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1); }
-.contact-form h2, .contact-details h2 { margin-bottom:20px; }
-.contact-form input, .contact-form textarea {
-  width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; font-family:'Tajawal', sans-serif;
+/* Responsive */
+@media(max-width:768px){
+  header { flex-direction:column; gap:10px; }
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+  .highlight-cards, .services-list { grid-template-columns:1fr; }
 }
-.contact-form button {
-  background:#1d5dad; color:#fff; padding:12px; border:none; border-radius:8px; cursor:pointer; width:100%; font-size:16px;
-}
-.contact-form button:hover { background:#0c356a; }
-.contact-details p { margin:8px 0; font-size:15px; }
-.contact-details i { margin-left:8px; color:#1d5dad; }
-.map { margin-top:15px; }
-
